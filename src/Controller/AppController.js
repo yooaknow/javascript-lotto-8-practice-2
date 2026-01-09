@@ -17,6 +17,7 @@ class AppController {
       const Money = new LottoAmouts (moneyInput) // 로또 개수 클래스 선언
       const LottoAmout = Money.calculate(); // 로또 구매 개수 저장 
       // Console.print(LottoAmout);
+      // Console.print(typeof LottoAmout);
       // Console.print(moneyInput);
     
 

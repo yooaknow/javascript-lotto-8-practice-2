@@ -1,6 +1,6 @@
 /*
-여기서는 자동차 이름에 관한 로직을 다 넣으면 될듯
-예를 들어서 자동차의 문자열을 입력 받아서, split해서 배열로 바꾸고
+- [x] 사용자가 산 로또의 갯수만큼 Lotto.js의 클래스를 생성한다. 
+받는 값은 number / 숫자를 입력 받음. -> 입력받은 숫자만큼 Lotto 생성 
 */
 
 import ERROR from"../constants/ErrorMessage.js";

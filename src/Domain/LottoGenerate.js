@@ -43,8 +43,5 @@ run () {
 
 export default Lottogenerater;
 
-const p = new Lottogenerater();
-// Console.print(p.pickUniqueNumbersInRange(1,45,6));
-// Console.print(p.pickUniqueBonusInRange(1,45,1));
-
-Console.print(p);
+// const p = new Lottogenerater();
+// Console.print(p);
