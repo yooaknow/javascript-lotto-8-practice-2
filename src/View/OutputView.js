@@ -53,11 +53,12 @@ class OutputView {
 
   printResult(FinalLotto) {
     Console.print(`${FinalLotto.count}개를 구매했습니다.`);
-      FinalLotto.Lotto.forEach((lotto) => {
-    Console.print(`[${lotto.Lotto.join(", ")}]`);
-  });
-}
 
+    for (let i = 0; i < FinalLotto.count; i++) {
+        const numbers = FinalLotto.Lotto[i].Lotto.join(", ");
+        Console.print(`[${numbers}]`);
+    }
+  }
   printWinner(winningDetails, totalReturnRate) {
     winningDetails.forEach(item => {
     Console.print(`${item.rank} - ${item.count}`);

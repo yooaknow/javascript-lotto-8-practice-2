@@ -4,6 +4,7 @@ import LottoAmouts from "../Domain/LottoAmount.js";
 import UserBonus from "../Domain/UserBonus.js";
 import Lotto from "../Lotto.js";
 import Lottos from "../Domain/Lottos.js";
+import Winning from "../Domain/Winning.js";
 
 class AppController {
   constructor(inputView, outputView) {
@@ -22,21 +23,26 @@ class AppController {
       // Console.print(moneyInput);
 
       const FinalLotto = new Lottos(LottoAmout);
-      // Console.print(FinalLotto); 
+      // let lotto = FinalLotto.Lotto[0].Lotto;
+      // Console.print(FinalLotto.Lotto[0].Lotto);
+      // const strings = lotto.map(String);
+      // Console.print(strings);
 
       this.outputView.printResult(FinalLotto); // 로또 생성 값 출력 
-    
 
       const numberInput = await this.inputView.readNumber();
       const numberInputArray = numberInput.split(",");
       const InputLotto = new Lotto (numberInputArray); // 사용자가 입력한 보너스 번호 입력
-      // Console.print(InputLotto);
+      // Console.print(numberInputArray);
 
 
       const bonusInput = await this.inputView.readBonus();
       const InputBonus = new UserBonus(bonusInput); 
-      // Console.print(InputBonus);
+      Console.print(InputBonus);
 
+
+      const Win = new Winning (FinalLotto, numberInputArray, InputBonus) 
+      Console.print(Win);
 
     } catch (error) {
       this.outputView.printError(error.message);
