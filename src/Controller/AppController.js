@@ -1,6 +1,7 @@
 import SampleDomain from "../Domain/SampleDomain.js";
 import { Console } from "@woowacourse/mission-utils";
 import LottoAmouts from "../Domain/LottoAmount.js";
+import Lotto from "../Domain/Lotto.js";
 class AppController {
   constructor(inputView, outputView) {
     this.inputView = inputView;
@@ -18,6 +19,11 @@ class AppController {
     
 
       const numberInput = await this.inputView.readNumber();
+      const numberInputArray = numberInput.split(",");
+      const InputLotto = new Lotto (numberInputArray); // 사용자가 입력한 보너스 번호 입력
+      // Console.print(InputLotto);
+
+
       const bonusInput = await this.inputView.readBonus();
 
 
