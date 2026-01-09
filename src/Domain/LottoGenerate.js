@@ -5,10 +5,14 @@
 
 */
 
+
+import { Console } from "@woowacourse/mission-utils";
+
 class Lottogenerater {
 constructor() {
 this.Lotto = [];
 this.Bonus = []; 
+this.run();
   }
 
 pickUniqueNumbersInRange(min, max, count) {
@@ -31,12 +35,16 @@ pickUniqueBonusInRange(min, max, count) {
   return Array.from(uniqueBonus); 
 }
 
+run () {
+  this.Bonus = this.pickUniqueBonusInRange(1,45,1);
+  this.Lotto = this.pickUniqueNumbersInRange(1,45,6);
+} 
 }
 
 export default Lottogenerater;
 
-// const p = new Lottogenerater();
+const p = new Lottogenerater();
 // Console.print(p.pickUniqueNumbersInRange(1,45,6));
 // Console.print(p.pickUniqueBonusInRange(1,45,1));
 
-// Console.print(p);
+Console.print(p);
