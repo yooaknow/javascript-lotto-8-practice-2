@@ -1,4 +1,6 @@
 /*
+
+
     8개를 구매했습니다.
     [8, 21, 23, 41, 42, 43]
     [3, 5, 11, 16, 32, 38]
@@ -27,6 +29,20 @@
     { rank: "6개 일치 (2,000,000,000원)", count: "0개" },
 
     const totalReturnRate = "62.5%";
+  지금 들어오는 값. 
+    Lottos {
+  count: 8,
+  Lotto: [
+    Lottogenerater { Lotto: [Array], Bonus: [Array] },
+    Lottogenerater { Lotto: [Array], Bonus: [Array] },
+    Lottogenerater { Lotto: [Array], Bonus: [Array] },
+    Lottogenerater { Lotto: [Array], Bonus: [Array] },
+    Lottogenerater { Lotto: [Array], Bonus: [Array] },
+    Lottogenerater { Lotto: [Array], Bonus: [Array] },
+    Lottogenerater { Lotto: [Array], Bonus: [Array] },
+    Lottogenerater { Lotto: [Array], Bonus: [Array] }
+  ]
+}
 ];
 
 */
@@ -35,10 +51,12 @@ import { Console } from "@woowacourse/mission-utils";
 
 class OutputView {
 
-  printResult(Number, result) {
-    Console.print(`${Number}개를 구매했습니다.`);
-    Console.print(result);
-  }
+  printResult(FinalLotto) {
+    Console.print(`${FinalLotto.count}개를 구매했습니다.`);
+      FinalLotto.Lotto.forEach((lotto) => {
+    Console.print(`[${lotto.Lotto.join(", ")}]`);
+  });
+}
 
   printWinner(winningDetails, totalReturnRate) {
     winningDetails.forEach(item => {

@@ -2,7 +2,8 @@ import SampleDomain from "../Domain/SampleDomain.js";
 import { Console } from "@woowacourse/mission-utils";
 import LottoAmouts from "../Domain/LottoAmount.js";
 import UserBonus from "../Domain/UserBonus.js";
-import Lotto from "../Domain/Lotto.js";
+import Lotto from "../Lotto.js";
+import Lottos from "../Domain/Lottos.js";
 
 class AppController {
   constructor(inputView, outputView) {
@@ -19,6 +20,11 @@ class AppController {
       // Console.print(LottoAmout);
       // Console.print(typeof LottoAmout);
       // Console.print(moneyInput);
+
+      const FinalLotto = new Lottos(LottoAmout);
+      // Console.print(FinalLotto); 
+
+      this.outputView.printResult(FinalLotto); // 로또 생성 값 출력 
     
 
       const numberInput = await this.inputView.readNumber();

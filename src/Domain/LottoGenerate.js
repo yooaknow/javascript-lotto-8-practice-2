@@ -5,40 +5,13 @@
 
 */
 
-
-import { Console } from "@woowacourse/mission-utils";
+import { Random } from "@woowacourse/mission-utils";
 
 class Lottogenerater {
-constructor() {
-this.Lotto = [];
-this.Bonus = []; 
-this.run();
+  constructor() {
+    this.Lotto = Random.pickUniqueNumbersInRange(1, 45, 6);
+    this.Bonus = Random.pickUniqueNumbersInRange(1, 45, 1);
   }
-
-pickUniqueNumbersInRange(min, max, count) {
-  const uniqueNumbers = new Set(); // 중복을 허용하지 않는 Set
-  while (uniqueNumbers.size < count) {
-    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-    uniqueNumbers.add(randomNumber);
-    this.Lotto = Array.from(uniqueNumbers);
-  }
-  return Array.from(uniqueNumbers); // Set을 배열로 변환하여 반환
-}
-
-pickUniqueBonusInRange(min, max, count) {
-  const uniqueBonus = new Set(); 
-  while (uniqueBonus.size < count) {
-    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-    uniqueBonus.add(randomNumber);
-    this.Bonus= Array.from(uniqueBonus);
-  }
-  return Array.from(uniqueBonus); 
-}
-
-run () {
-  this.Bonus = this.pickUniqueBonusInRange(1,45,1);
-  this.Lotto = this.pickUniqueNumbersInRange(1,45,6);
-} 
 }
 
 export default Lottogenerater;

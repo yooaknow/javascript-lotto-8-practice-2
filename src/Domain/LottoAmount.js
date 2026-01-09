@@ -17,15 +17,17 @@ validate(input) {
   if (Number(input) < 0) {
       throw new Error('[ERROR] 0 이상이어야 합니다.');
     }
-
-    if (input % 1000 !==0) {
-      throw new Error(`[ERROR] ${1000} 단위로만 입력할 수 있습니다.`);
-    }
-
-    if (!/^\d+$/.test(input)) {
+    
+     if (!/^\d+$/.test(input)) {
       throw new Error('[ERROR] 숫자로만 이루어져야 합니다.');
     }
 
+
+    if (input % 1000 !==0) {
+      throw new Error("[ERROR] 1000단위로만 입력할 수 있습니다.");
+    }
+
+   
   return input;
 }
 
