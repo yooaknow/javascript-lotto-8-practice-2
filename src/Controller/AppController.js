@@ -25,6 +25,7 @@ class AppController {
 
 
       const bonusInput = await this.inputView.readBonus();
+      
 
 
     } catch (error) {
