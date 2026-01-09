@@ -6,6 +6,7 @@
 나와야하는 값 -> 1. 숫자 8000 2. 로또 구매 개수  
 */
 
+
 class LottoAmouts {
 constructor(input) {
 this.value =this.validate(input); 
@@ -30,6 +31,8 @@ validate(input) {
 
 calculate() {
 let LottoMoney = this.value;
+this.amount = LottoMoney / 1000;
+
 return LottoMoney / 1000;
   }
 }
