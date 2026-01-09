@@ -7,7 +7,7 @@ import { Console } from "@woowacourse/mission-utils";
 
 class UserBonus {
 constructor(input) {
-this.value =this.validate(input); 
+this.UserBonus =this.validate(input); 
   }
 
 validate(input) {

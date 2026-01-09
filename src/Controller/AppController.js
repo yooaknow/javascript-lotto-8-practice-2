@@ -1,7 +1,9 @@
 import SampleDomain from "../Domain/SampleDomain.js";
 import { Console } from "@woowacourse/mission-utils";
 import LottoAmouts from "../Domain/LottoAmount.js";
+import UserBonus from "../Domain/UserBonus.js";
 import Lotto from "../Domain/Lotto.js";
+
 class AppController {
   constructor(inputView, outputView) {
     this.inputView = inputView;
@@ -25,7 +27,8 @@ class AppController {
 
 
       const bonusInput = await this.inputView.readBonus();
-      
+      const InputBonus = new UserBonus(bonusInput); 
+      // Console.print(InputBonus);
 
 
     } catch (error) {
